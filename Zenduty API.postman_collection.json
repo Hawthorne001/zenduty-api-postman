@@ -1,0 +1,1849 @@
+{
+	"info": {
+		"_postman_id": "5f26f729-3459-4f8d-a5b5-ad0bd9456f05",
+		"name": "Zenduty API",
+		"description": "List of all Zenduty API endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "Create a Team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "38a36825-1e6d-48bb-ac2a-308e69ba005c",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"team_id2\", jsonData.unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"New Team\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								""
+							]
+						},
+						"description": "This request will create a team."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Teams",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "504ef0bb-6f9c-42b0-a79f-cff4445bc30b",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"team_id\", jsonData[0].unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								""
+							]
+						},
+						"description": "This endpoint will get all the operations related to the team."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Team detail by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}"
+							]
+						},
+						"description": "To get the details of the team."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Team",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id2}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id2}}",
+								""
+							]
+						},
+						"description": "This endpoint will delete the specified team."
+					},
+					"response": []
+				}
+			],
+			"description": "All the API endpoints related to Teams.\n",
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "Token b4bd70171eb51a2dcb1078e39cb32c4fb654610a",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "Authorization",
+						"type": "string"
+					},
+					{
+						"key": "in",
+						"value": "header",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e7ec32e2-60e4-41a7-a44a-d04741fead0e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "893f63e1-17c3-4089-835a-a0a104136a50",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Add new Service to a Team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d1f802f7-5235-4e61-a6a8-ee8cc96465da",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"service_id2\", jsonData.unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"New Service\",\n\t\"collation\": 1,\n\t\"collation_time\": 1,\n\t\"description\": \"This is the description for the Service\",\n\t\"escalation_policy\": \"{{ep_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"services",
+								""
+							]
+						},
+						"description": "This request lets you add a new Service to a team."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Services for a team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b73474ff-4133-4b19-b3c7-85a7fa7c961f",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"service_id\", jsonData[0].unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"services"
+							]
+						},
+						"description": "To get all the services linked to a team."
+					},
+					"response": []
+				},
+				{
+					"name": "Get services by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"services",
+								"{{service_id}}"
+							]
+						},
+						"description": "This request will get you the service by its corresponding Service ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Service",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Modified Service Name\",\n\t\"collation\": 1,\n\t\"collation_time\": 1,\n\t\"description\": \"This is the modified description for the Service\",\n\t\"escalation_policy\": \"{{ep_id}}\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"services",
+								"{{service_id}}",
+								""
+							]
+						},
+						"description": "This endpoint lets one Update the Service details. In this case, the name of the service will be changed to \"Modified Service Name\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Service",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5d5da938-7ab4-4b6c-abff-f0d955eb13e8",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id2}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"services",
+								"{{service_id2}}",
+								""
+							]
+						},
+						"description": "This request letsone delete a service."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Integrations",
+			"item": [
+				{
+					"name": "Create Integration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"New Integration\",\n\t\"summary\": \"This is the summary for new Integration\",\n\t\"application\": \"{{app_ref}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/integrations/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"services",
+								"{{service_id}}",
+								"integrations",
+								""
+							]
+						},
+						"description": "This request will let one create a new Integration for the specific Service."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Integrations in a Service",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dbe1ae74-ecd4-4f23-84c4-4befdd141c9d",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"integration_id\", jsonData[0].unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/integrations",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"services",
+								"{{service_id}}",
+								"integrations"
+							]
+						},
+						"description": "This will show all the integrations under the service."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Integrations by ID ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/integrations/{{integration_id}}",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"services",
+								"{{service_id}}",
+								"integrations",
+								"{{integration_id}}"
+							]
+						},
+						"description": "This request will get the Integration by integration ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get alerts in an integration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/integrations/{{integration_id}}/alerts",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"services",
+								"{{service_id}}",
+								"integrations",
+								"{{integration_id}}",
+								"alerts"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This API will address all the Integrations related endpoints.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "Get members",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "55e1b5ad-0488-44cb-aa02-3d00f4e2d7f2",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"target_id\", jsonData[0].user.username);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/members",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"members"
+							]
+						},
+						"description": "This endpoints lets one get all the memebers of a specific team."
+					},
+					"response": []
+				}
+			],
+			"description": "All the operations related to the members of a specific team.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Incidents",
+			"item": [
+				{
+					"name": "Create Incidents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1bc5df9a-8efb-4cb4-8906-d2f913a36343",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"incident_number\", jsonData.incident_number);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"service\": \"{{service_id}}\",\n\t\"escalation_policy\": \"{{ep_id}}\",\n\t\"user\": null,\n\t\"title\": \"Incident Title\",\n\t\"summary\": \"This is the summary for the incident\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								""
+							]
+						},
+						"description": "This request will let one create a new incident."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Incidents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dc5bdd74-4fc5-44db-be73-5de479b7e250",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents"
+							]
+						},
+						"description": "This endpoint will give all the incidents for the account."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Incident by number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/{{incident_number}}",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								"{{incident_number}}"
+							]
+						},
+						"description": "This request will get the specific incident by its Incident number."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Incident Alerts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/{{incident_number}}/alerts",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								"{{incident_number}}",
+								"alerts"
+							]
+						},
+						"description": "This request will fetch all the alerts for the specific Incident.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get incident Notes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/{{incident_number}}/note",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								"{{incident_number}}",
+								"note"
+							]
+						},
+						"description": "This request will get all the notes for the specific incident."
+					},
+					"response": []
+				},
+				{
+					"name": "Acknowledge the Incident",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/{{incident_number}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								"{{incident_number}}",
+								""
+							]
+						},
+						"description": "This endpoint will let one Acknowledge any valid incident."
+					},
+					"response": []
+				},
+				{
+					"name": "Resolve the Incident",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/{{incident_number}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								"{{incident_number}}",
+								""
+							]
+						},
+						"description": "This endpoint will let one Resolve a specific incident."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Escalation Policies",
+			"item": [
+				{
+					"name": "Create Escalation Policy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c5f87bd-065c-48ca-9e26-198928c42c99",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"ep_id\", jsonData.unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"New Escalation Policy\",\r\n\t\"summary\": \"This is the summary for the new escalation policy\",\r\n\t\"description\": \"This is the description for the New Escalation Policy\",\r\n\t\"rules\": [\r\n            {\r\n                \"delay\": 0,\r\n                \"targets\": [\r\n                    {\r\n                        \"target_type\": 2,\r\n                        \"target_id\": \"{{target_id}}\"\r\n                    }\r\n                ],\r\n                \"position\": 1,\r\n                \"unique_id\": \"\"\r\n            }\r\n        ],\r\n\t\"team\": \"{{team_id}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/escalation_policies/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"escalation_policies",
+								""
+							]
+						},
+						"description": "This request lets you create a new Escalation Policy."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Escalation Policies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "52a9b980-70d8-43eb-923e-1710b6be5924",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"ep_id\", jsonData[0].unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/escalation_policies",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"escalation_policies"
+							]
+						},
+						"description": "This request will show you the escalation policies for the specified team."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Escalation Policy by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/escalation_policies/{{ep_id}}",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"escalation_policies",
+								"{{ep_id}}"
+							]
+						},
+						"description": "This request will get the escalation policy by the specific ID of the Escalation Policy."
+					},
+					"response": []
+				},
+				{
+					"name": "Update an Escalation Policy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Modified Name\",\r\n\t\"summary\": \"This is the summary for the new escalation policy\",\r\n\t\"description\": \"This is the description for the New Escalation Policy\",\r\n\t\"rules\": [\r\n            {\r\n                \"delay\": 0,\r\n                \"targets\": [\r\n                    {\r\n                        \"target_type\": 2,\r\n                        \"target_id\": \"{{target_id}}\"\r\n                    }\r\n                ],\r\n                \"position\": 1,\r\n                \"unique_id\": \"\"\r\n            }\r\n        ],\r\n\t\"team\": \"{{team_id}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/escalation_policies/{{ep_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"escalation_policies",
+								"{{ep_id}}",
+								""
+							]
+						},
+						"description": "This request lets one Update and Escalation Policy."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an Escalation Policy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/escalation_policies/{{ep_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"escalation_policies",
+								"{{ep_id}}",
+								""
+							]
+						},
+						"description": "This request to the endpoint letsone delete an Escalation Policy."
+					},
+					"response": []
+				}
+			],
+			"description": "This API endpoint will handle all the operations related to Escalation Policies.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Schedules",
+			"item": [
+				{
+					"name": "Create a Schedule",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1bf80575-fc81-4d03-87c8-a52e0e4b8650",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"schedule_id2\", jsonData.unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"New Schedule\",\n\t\"summary\": \"Summary for the new Schedule\",\n\t\"descripition\": \"This is the description for the new Schedule\",\n\t\"time_zone\": \"Asia/Kolkata\",\n\t\"team\": \"{{team_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/schedules/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"schedules",
+								""
+							]
+						},
+						"description": "This request lets one create new Schedule."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Schedules",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d2cc34ea-577f-4d58-88ce-c36995a96a49",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"schedule_id\", jsonData[0].unique_id);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/schedules",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"schedules"
+							]
+						},
+						"description": "Get all the Schedules for a specific Team"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Schedule by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/schedules/{{schedule_id}}",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"schedules",
+								"{{schedule_id}}"
+							]
+						},
+						"description": "This request will get the Schedule by the specific ID. "
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Schedule",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Balls\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/schedules/{{schedule_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"schedules",
+								"{{schedule_id}}",
+								""
+							]
+						},
+						"description": "This endpoint lets one update the Schedule. Anything in the schedule can be updated. Lets update the name of the Schedule."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Schedule",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/schedules/{{schedule_id2}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"schedules",
+								"{{schedule_id2}}",
+								""
+							]
+						},
+						"description": "This request lets one delete a Schedule for a specific team."
+					},
+					"response": []
+				}
+			],
+			"description": "This endpoint will handle all the operations related to Schedules.\n",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7d078775-4155-42f7-b31c-628ec1afe3c8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1183591f-4806-4f25-84dd-e144315df4ab",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Create a new Role for a team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2f74f68d-bd4d-455a-80d8-01d8f674f04e",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"role_id2\", jsonData.unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"New Role\",\n\t\"description\": \"This is the description for the new Role\",\n\t\"rank\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/roles/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"roles",
+								""
+							]
+						},
+						"description": "This endpoint lets one create a new Role for a specific Team."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Roles for a Team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b112f47-a103-48f9-ae56-a9daaa2c60a5",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"role_id\", jsonData[0].unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/roles",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"roles"
+							]
+						},
+						"description": "This request will get all the Roles in a specific team."
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Role",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Modified Title\",\n\t\"description\": \"New Modified description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/roles/{{role_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"roles",
+								"{{role_id}}",
+								""
+							]
+						},
+						"description": "This endpoint will let you update the information of a Role for a specific team. Lets modify the title of the Role to \"Modified Role\" and the Description to \"Modified description\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/roles/{{role_id2}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"roles",
+								"{{role_id2}}",
+								""
+							]
+						},
+						"description": "This request lets one delete a Role a specific Team."
+					},
+					"response": []
+				}
+			],
+			"description": "This endpoint will handle all the operations related to Roles.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "Create a new Tag for a Team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "512e14d1-62fe-49e3-82d8-0d2663cbca8a",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"tag_id2\", jsonData.unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"New Tag\",\n\t\"color\": \"red\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/tags/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"tags",
+								""
+							]
+						},
+						"description": "This endpoint lets you create a new Tag for a specific team."
+					},
+					"response": []
+				},
+				{
+					"name": "Get tags associated with the team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f2746abe-5684-48d9-b93e-e2065c838e5f",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"tag_id\", jsonData[0].unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/tags",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"tags"
+							]
+						},
+						"description": "This request will get all the Roles for a specific team."
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Tag",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Modified Titles\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/tags/{{tag_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"tags",
+								"{{tag_id}}",
+								""
+							]
+						},
+						"description": "This endpoint lets the user update the details of a Tag for a specific team. As an example we are gonna change the title of the tag to \"Modified Title\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Tag",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/tags/{{tag_id2}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"tags",
+								"{{tag_id2}}",
+								""
+							]
+						},
+						"description": "This request lets you delete a Tag."
+					},
+					"response": []
+				}
+			],
+			"description": "This endpoint will handle all the Roles for a team.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Task Templates",
+			"item": [
+				{
+					"name": "Create a new Task Template for a Team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "316a557c-c443-4724-a06e-8ad9f3ba81eb",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"task_template_id\", jsonData.unique_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"New Task Template\",\n\t\"summary\": \"This is the summary of the new Task Template\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/task_templates/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"task_templates",
+								""
+							]
+						},
+						"description": "This endpoint lets you create a Task Template for a specific Team."
+					},
+					"response": []
+				},
+				{
+					"name": "Get the Task Templates ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/task_templates",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"task_templates"
+							]
+						},
+						"description": "This request will get all the Task Templates for the specific team."
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Task Template",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c00aff2a-df4e-4b0a-a104-bd787760faa2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Modified Name\",\n\t\"summary\": \"Modified summary for the Task Template\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/task_templates/{{task_template_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"task_templates",
+								"{{task_template_id}}",
+								""
+							]
+						},
+						"description": "This endpoint lets you update the Task Template details of a specific team."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Task Template",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/task_templates/{{task_template_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"task_templates",
+								"{{task_template_id}}",
+								""
+							]
+						},
+						"description": "This request lets you delete a Task Template for a specific Team."
+					},
+					"response": []
+				}
+			],
+			"description": "This endpoint will handle all the operation related to Task Templates.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "On Call",
+			"item": [
+				{
+					"name": "Get details of who is On Call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/oncall",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_id}}",
+								"oncall"
+							]
+						},
+						"description": "This request willshow you the on call detais"
+					},
+					"response": []
+				}
+			],
+			"description": "This endpoint will get you the details of who is On Call.",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Token (Your API key here)",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f10a2657-53b9-4490-b41e-04f15fe817f1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "eaf7cee2-c735-414e-a1f8-e954918759b5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "346aa5ce-4cf1-483e-99ac-2763640fa2e4",
+			"key": "team_id",
+			"value": "none",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
