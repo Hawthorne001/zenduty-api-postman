@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5f26f729-3459-4f8d-a5b5-ad0bd9456f05",
+		"_postman_id": "e84f3ac7-fff8-4c99-ae46-bbb5dac8a400",
 		"name": "Zenduty API",
 		"description": "List of all Zenduty API endpoints.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,7 +15,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "38a36825-1e6d-48bb-ac2a-308e69ba005c",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"team_id2\", jsonData.unique_id);"
@@ -68,7 +67,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "504ef0bb-6f9c-42b0-a79f-cff4445bc30b",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"team_id\", jsonData[0].unique_id);"
@@ -174,7 +172,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "e7ec32e2-60e4-41a7-a44a-d04741fead0e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -184,15 +181,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "893f63e1-17c3-4089-835a-a0a104136a50",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Services",
@@ -203,7 +198,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d1f802f7-5235-4e61-a6a8-ee8cc96465da",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"service_id2\", jsonData.unique_id);"
@@ -258,7 +252,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b73474ff-4133-4b19-b3c7-85a7fa7c961f",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"service_id\", jsonData[0].unique_id);"
@@ -365,7 +358,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5d5da938-7ab4-4b6c-abff-f0d955eb13e8",
 								"exec": [
 									""
 								],
@@ -398,8 +390,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Integrations",
@@ -454,7 +445,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dbe1ae74-ecd4-4f23-84c4-4befdd141c9d",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"integration_id\", jsonData[0].unique_id);"
@@ -545,8 +535,7 @@
 					"response": []
 				}
 			],
-			"description": "This API will address all the Integrations related endpoints.",
-			"protocolProfileBehavior": {}
+			"description": "This API will address all the Integrations related endpoints."
 		},
 		{
 			"name": "Members",
@@ -557,7 +546,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "55e1b5ad-0488-44cb-aa02-3d00f4e2d7f2",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"target_id\", jsonData[0].user.username);\r",
@@ -591,8 +579,7 @@
 					"response": []
 				}
 			],
-			"description": "All the operations related to the members of a specific team.",
-			"protocolProfileBehavior": {}
+			"description": "All the operations related to the members of a specific team."
 		},
 		{
 			"name": "Incidents",
@@ -603,7 +590,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1bc5df9a-8efb-4cb4-8906-d2f913a36343",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"incident_number\", jsonData.incident_number);\r",
@@ -656,7 +642,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dc5bdd74-4fc5-44db-be73-5de479b7e250",
 								"exec": [
 									""
 								],
@@ -835,8 +820,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Escalation Policies",
@@ -847,7 +831,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6c5f87bd-065c-48ca-9e26-198928c42c99",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"ep_id\", jsonData.unique_id);"
@@ -902,7 +885,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "52a9b980-70d8-43eb-923e-1710b6be5924",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"ep_id\", jsonData[0].unique_id);"
@@ -1031,8 +1013,7 @@
 					"response": []
 				}
 			],
-			"description": "This API endpoint will handle all the operations related to Escalation Policies.",
-			"protocolProfileBehavior": {}
+			"description": "This API endpoint will handle all the operations related to Escalation Policies."
 		},
 		{
 			"name": "Schedules",
@@ -1043,7 +1024,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1bf80575-fc81-4d03-87c8-a52e0e4b8650",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"schedule_id2\", jsonData.unique_id);"
@@ -1098,7 +1078,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d2cc34ea-577f-4d58-88ce-c36995a96a49",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"schedule_id\", jsonData[0].unique_id);\r",
@@ -1233,7 +1212,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "7d078775-4155-42f7-b31c-628ec1afe3c8",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1243,15 +1221,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "1183591f-4806-4f25-84dd-e144315df4ab",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Roles",
@@ -1262,7 +1238,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2f74f68d-bd4d-455a-80d8-01d8f674f04e",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"role_id2\", jsonData.unique_id);"
@@ -1317,7 +1292,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3b112f47-a103-48f9-ae56-a9daaa2c60a5",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"role_id\", jsonData[0].unique_id);"
@@ -1420,8 +1394,7 @@
 					"response": []
 				}
 			],
-			"description": "This endpoint will handle all the operations related to Roles.",
-			"protocolProfileBehavior": {}
+			"description": "This endpoint will handle all the operations related to Roles."
 		},
 		{
 			"name": "Tags",
@@ -1432,7 +1405,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "512e14d1-62fe-49e3-82d8-0d2663cbca8a",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"tag_id2\", jsonData.unique_id);"
@@ -1487,7 +1459,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f2746abe-5684-48d9-b93e-e2065c838e5f",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"tag_id\", jsonData[0].unique_id);"
@@ -1590,8 +1561,7 @@
 					"response": []
 				}
 			],
-			"description": "This endpoint will handle all the Roles for a team.",
-			"protocolProfileBehavior": {}
+			"description": "This endpoint will handle all the Roles for a team."
 		},
 		{
 			"name": "Task Templates",
@@ -1602,7 +1572,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "316a557c-c443-4724-a06e-8ad9f3ba81eb",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"task_template_id\", jsonData.unique_id);"
@@ -1682,7 +1651,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c00aff2a-df4e-4b0a-a104-bd787760faa2",
 								"exec": [
 									""
 								],
@@ -1759,8 +1727,7 @@
 					"response": []
 				}
 			],
-			"description": "This endpoint will handle all the operation related to Task Templates.",
-			"protocolProfileBehavior": {}
+			"description": "This endpoint will handle all the operation related to Task Templates."
 		},
 		{
 			"name": "On Call",
@@ -1791,8 +1758,39 @@
 					"response": []
 				}
 			],
-			"description": "This endpoint will get you the details of who is On Call.",
-			"protocolProfileBehavior": {}
+			"description": "This endpoint will get you the details of who is On Call."
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Create an Alert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"message\": \"[P-21041]Browser monitor global outage\",\n\t\"summary\": \"OPEN Problem P-21041 in environment zfw09965. Problem detected at: 17:58 (UTC) 27.04.2021\",\n\t\"alert_type\": \"critical\",\n\t\"suppressed\": false,\n\t\"entity_id\": \"INC00123\",\n    \"payload\":\"{}\"\n}"
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/events/{{integration_key}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"events",
+								"{{integration_key}}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
@@ -1819,7 +1817,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f10a2657-53b9-4490-b41e-04f15fe817f1",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1829,7 +1826,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "eaf7cee2-c735-414e-a1f8-e954918759b5",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1839,11 +1835,9 @@
 	],
 	"variable": [
 		{
-			"id": "346aa5ce-4cf1-483e-99ac-2763640fa2e4",
 			"key": "team_id",
 			"value": "none",
 			"type": "string"
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
