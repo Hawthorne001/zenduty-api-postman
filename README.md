@@ -1,22 +1,20 @@
+
 # zenduty-api-postman
 Zenduty API Postman collections
 
 ## How to generate the API Key
-1. Login to your Zenduty account click your profile and go to account section.
-2. Click the API Keys and then click Create a new API key.
-3. Give a name to your new API key and then click create.
-4. A popup is shown from where copy that newly generated API key and save it somewhere in your local machine.
+1. Login to your Zenduty account. Navigate to your account page from your Zenduty dashboard in the top right corner.
+2. Click on the **API Keys** section, and then click on **Create a new API key**.
+3. Give a name to your new API key and then click **Create**.
+4. Copy the newly generated API key and save it in a safe location(you will not be able to retrieve the API key again).
 
 ## How to import Zenduty api postman collection
 
-1. Go to Zenduty/zenduty-api-postman in Github(https://github.com/Zenduty/zenduty-api-postman).
-2. Click Zenduty API.postman_collection.json to view the contents within the GitHub UI.
-3. In the top right, right click the Raw button.
-4. Click save link as and download the file in your local machine.
-5. Open postman app and go to collection section.
-6. Click import and import the collection(the json file you just downloaded).
+1. Clone the [zenduty-api-postman project in Github](https://github.com/Zenduty/zenduty-api-postman)
+2. Open your Postman app and navigate to the **Collections** section.
+3. Navigate to the cloned project in your local machine. Import the **Zenduty API.postman_collection.json** 
 
-## How to add API key to access your Zenduty API's.
+## How to add API key to access the Zenduty API
 
-1. Go to Zenduty API in your collection section.
-2. Go to any api request and in headers tab add a key value pair where key will be Authorization and value will be token {{API key}}.
+1. Go to **Zenduty API** collection in your Postman app
+2. For any API request, add a key value pair and in headers tab where the key will be **Authorization** and value will be **Token {{API key}}**.
