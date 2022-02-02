@@ -16,5 +16,8 @@ Zenduty API Postman collections
 
 ## How to add API key to access the Zenduty API
 
-1. Go to **Zenduty API** collection in your Postman app
-2. For any API request, add a key value pair and in headers tab where the key will be **Authorization** and value will be **Token {{API key}}**.
+1. Click to **Zenduty API** collection in your Postman app
+2. Navigate to the **Authorization** tab. In the **Value** section, **(Your API key here)** with the API Key copied from above. The **Value** section should look like **Token xxxxxxxxxxx**.
+3. Click on **Save**
+
+Your Collection is now ready for API testing.
