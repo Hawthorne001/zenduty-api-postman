@@ -1,12 +1,39 @@
 {
 	"info": {
-		"_postman_id": "1ac809a9-889d-400b-b1d9-c9622a6e5f16",
+		"_postman_id": "2d5098ec-5661-4d52-baaf-735a86761c5b",
 		"name": "Zenduty API",
 		"description": "List of all Zenduty API endpoints.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18721910"
 	},
 	"item": [
+		{
+			"name": "User Profile",
+			"item": [
+				{
+					"name": "User Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/user/profile/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"profile",
+								""
+							]
+						},
+						"description": "Get requested user profile"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints related to user profile object"
+		},
 		{
 			"name": "Account Members",
 			"item": [
@@ -103,42 +130,7 @@
 					"response": []
 				}
 			],
-			"description": "All the API endpoints related to Account Member.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "All the API endpoints related to Account Member."
 		},
 		{
 			"name": "Invite Account User",
@@ -176,42 +168,7 @@
 					"response": []
 				}
 			],
-			"description": "All the API endpoints related to Invite Account User.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "All the API endpoints related to Invite Account User."
 		},
 		{
 			"name": "Delete Account User",
@@ -249,42 +206,7 @@
 					"response": []
 				}
 			],
-			"description": "All the API endpoints related to Delete Account User.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "All the API endpoints related to Delete Account User."
 		},
 		{
 			"name": "Account Custom Roles",
@@ -461,47 +383,7 @@
 					"response": []
 				}
 			],
-			"description": "All the API endpoints related to Account Custom Roles.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					},
-					{
-						"key": "in",
-						"value": "header",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "All the API endpoints related to Account Custom Roles."
 		},
 		{
 			"name": "User Custom Role",
@@ -566,42 +448,436 @@
 					"response": []
 				}
 			],
-			"description": "All the API endpoints related to User Custom Role.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
+			"description": "All the API endpoints related to User Custom Role."
+		},
+		{
+			"name": "Notification Rule",
+			"item": [
 				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+					"name": "Create the User Notification Rule object",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"start_delay\": {{notification_rule_delay}}, // example: 0\n\"contact\": {{user_contact_unique_id}}, // example: \"caabda03-5e15-4cf1-b293-fab41b688ac7\"\n\"urgency\": {{notification_rule_incident_urgency}} // example: 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/notification_rules/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"notification_rules",
+								""
+							]
+						},
+						"description": "Create the User Notification Rule object by setting the values of all the required parameters passed in the request body."
+					},
+					"response": []
 				},
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+					"name": "List all User Notification Rule objects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/notification_rules/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"notification_rules",
+								""
+							]
+						},
+						"description": "Returns a list of User Notification Rule objects."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve the User Notification Rule object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/notification_rules/{{notification_rule_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"notification_rules",
+								"{{notification_rule_unique_id}}",
+								""
+							]
+						},
+						"description": "Retrieve the specified User Notification Rule object."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the User Notification Rule object",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/notification_rules/{{notification_rule_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"notification_rules",
+								"{{notification_rule_unique_id}}",
+								""
+							]
+						},
+						"description": "Delete the specified User Notification Rule object permanently."
+					},
+					"response": []
 				}
-			]
+			],
+			"description": "All the API endpoints related to User Notification Rule."
+		},
+		{
+			"name": "Forwarding Rule",
+			"item": [
+				{
+					"name": "Create the User Forwarding Rule object",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from_date\": {{from_date}}, // example: \"2023-03-01T16:37:58.654Z\"\n  \"to_date\": {{to_date}}, // example: \"2023-03-01T16:37:58.654Z\"\n  \"to_user\": {{user_username}} // example: \"7e26fed1-f11c-4e78-afc6-a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/forwarding_rules/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"forwarding_rules",
+								""
+							]
+						},
+						"description": "Create the User Forwarding Rule object by setting the values of all the required parameters passed in the request body."
+					},
+					"response": []
+				},
+				{
+					"name": "List all User Forwarding Rule objects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/forwarding_rules/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"forwarding_rules",
+								""
+							]
+						},
+						"description": "Returns a list of User Forwarding Rule objects."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve the User Forwarding Rule object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/forwarding_rules/{{forwarding_rule_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"forwarding_rules",
+								"{{forwarding_rule_unique_id}}",
+								""
+							]
+						},
+						"description": "Retrieve the specified User Forwarding Rule object."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the User Forwarding Rule object",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/forwarding_rules/{{forwarding_rule_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"forwarding_rules",
+								"{{forwarding_rule_unique_id}}",
+								""
+							]
+						},
+						"description": "Delete the specified User Forwarding Rule object permanently."
+					},
+					"response": []
+				}
+			],
+			"description": "All the API endpoints related to User Forwarding Rule."
+		},
+		{
+			"name": "Contact Method",
+			"item": [
+				{
+					"name": "Create the User Contact Method object",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": {{user_contact_name}}, // example: \"Secondary Email\"\n  \"value\": {{user_contact_value}}, // example:  \"anshulrajput229@gmail.com\"\n  \"contact_type\": {{user_contact_type}} // example: 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/contacts/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"contacts",
+								""
+							]
+						},
+						"description": "Create the User Contact Method object by setting the values of all the required parameters passed in the request body. A user can only create email contact method through API."
+					},
+					"response": []
+				},
+				{
+					"name": "List all User Contact Method objects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/contacts/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"contacts",
+								""
+							]
+						},
+						"description": "Returns a list of User Contact Method objects."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve the User Contact Method object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/contacts/{{contact_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"contacts",
+								"{{contact_unique_id}}",
+								""
+							]
+						},
+						"description": "Retrieve the specified User Contact Method object."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the User Contact Method object",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/users/{{username}}/contacts/{{contact_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"users",
+								"{{username}}",
+								"contacts",
+								"{{contact_unique_id}}",
+								""
+							]
+						},
+						"description": "Delete the specified User Contact Method object permanently."
+					},
+					"response": []
+				}
+			],
+			"description": "All the API endpoints related to User Contact methods."
 		},
 		{
 			"name": "Teams",
@@ -778,47 +1054,7 @@
 					"response": []
 				}
 			],
-			"description": "All the API endpoints related to Teams.\n",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					},
-					{
-						"key": "in",
-						"value": "header",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "All the API endpoints related to Teams."
 		},
 		{
 			"name": "Team Members",
@@ -1044,42 +1280,7 @@
 					"response": []
 				}
 			],
-			"description": "This API endpoint will handle all the operations related to Team Permission.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "This API endpoint will handle all the operations related to Team Permission."
 		},
 		{
 			"name": "Schedules",
@@ -1273,27 +1474,7 @@
 					"response": []
 				}
 			],
-			"description": "This endpoint will handle all the operations related to Schedules.\n",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "This endpoint will handle all the operations related to Schedules."
 		},
 		{
 			"name": "Escalation Policies",
@@ -1689,7 +1870,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "This API endpoint will handle all the operations related to Services."
 		},
 		{
 			"name": "Integrations",
@@ -1903,42 +2085,7 @@
 					"response": []
 				}
 			],
-			"description": "All the API endpoints related to Integration Alerts.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "All the API endpoints related to Integration Alerts."
 		},
 		{
 			"name": "Incidents",
@@ -2012,7 +2159,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/incidents",
+							"raw": "https://www.zenduty.com/api/incidents/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -2021,7 +2168,70 @@
 							],
 							"path": [
 								"api",
-								"incidents"
+								"incidents",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "team_ids",
+									"value": "[\"e09a815d-5c23-4575-a346-e25bdbd4dbdb\", \"3756a74b-5012-4f8b-94e3-ccd5f1ead4c7\"] ",
+									"disabled": true
+								},
+								{
+									"key": "all_teams",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "service_ids",
+									"value": "[\"d1a764f1-458a-4a5a-bf2e-93d5332b1059\", \"57997fbb-00ac-4a17-83f8-34fd49c28498\", \"8e729ff5-04ec-4d7e-b48c-226a0bb2933c\"]",
+									"disabled": true
+								},
+								{
+									"key": "user_ids",
+									"value": "[\"259d67f8-c975-4403-b9b8-8\", \"08a4805c-8f07-4221-85c2-1\", \"b115be42-9c4f-4277-a885-9\"]",
+									"disabled": true
+								},
+								{
+									"key": "priority_name",
+									"value": "\"p1\"",
+									"disabled": true
+								},
+								{
+									"key": "priority_ids",
+									"value": "[\"9a29f200-b360-47ae-a9d2-1ef6e5f55765\", \"115ed500-00e0-4baf-807b-fad306e22712\"]",
+									"disabled": true
+								},
+								{
+									"key": "tag_ids",
+									"value": "[\"88c04d0b-271d-4d7d-bffd-a3dcaabd8c9c\", \"410dc2dd-c1df-4004-aea1-fb55cd9c8afe\"]",
+									"disabled": true
+								},
+								{
+									"key": "sla_ids",
+									"value": "[\"646d32ee-d044-4171-bef8-3d7e884fa872\", \"dc287c19-582c-498b-82b6-3b81c33bc0dd\"]",
+									"disabled": true
+								},
+								{
+									"key": "from_date",
+									"value": "\"2023-02-01\"",
+									"disabled": true
+								},
+								{
+									"key": "to_date",
+									"value": "\"2023-03-06\"",
+									"disabled": true
+								}
 							]
 						},
 						"description": "This endpoint will give all the incidents for the account."
@@ -2131,7 +2341,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "All the API endpoints related to Incidetns."
 		},
 		{
 			"name": "Incident Roles",
@@ -2468,42 +2679,146 @@
 					"response": []
 				}
 			],
-			"description": "All the API endpoints related to Incident Notes.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
+			"description": "All the API endpoints related to Incident Notes."
+		},
+		{
+			"name": "Incident Tags",
+			"item": [
 				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+					"name": "Create the Incident Tag object",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"team_tag\": {{team_tag_unique_id}} // example: \"bc56a5d1-3ec3-4802-9f6a-3f93519ec2a4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/{{incident_number}}/tags/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								"{{incident_number}}",
+								"tags",
+								""
+							]
+						},
+						"description": "Create the Incident Tag object by setting the values of all the required parameters passed in the request body."
+					},
+					"response": []
 				},
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+					"name": "List all Incident Tag objects",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/{{incident_number}}/tags/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								"{{incident_number}}",
+								"tags",
+								""
+							]
+						},
+						"description": "Returns a list of Incident Tag objects. The Incident Tag objects are sorted by creation_date, with the most recent Incident Note object appearing last."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve the Incident Tag object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/{{incident_number}}/tags/{{incident_tag_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								"{{incident_number}}",
+								"tags",
+								"{{incident_tag_unique_id}}",
+								""
+							]
+						},
+						"description": "Retrieve the specified Incident Tag object."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Incident Tag object",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/incidents/{{incident_number}}/tags/{{incident_tag_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"incidents",
+								"{{incident_number}}",
+								"tags",
+								"{{incident_tag_unique_id}}",
+								""
+							]
+						},
+						"description": "Delete the specified Incident Tag object permanently."
+					},
+					"response": []
 				}
-			]
+			],
+			"description": "All the API endpoints related to Incident Tag."
 		},
 		{
 			"name": "Events",
@@ -2536,7 +2851,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "All the API endpoints related to Events."
 		},
 		{
 			"name": "Incident Alerts",
@@ -2566,42 +2882,7 @@
 					"response": []
 				}
 			],
-			"description": "All the API endpoints related to Incident Alerts.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "All the API endpoints related to Incident Alerts."
 		},
 		{
 			"name": "Tags",
@@ -2981,224 +3262,6 @@
 			"description": "This endpoint will handle all the operation related to Task Templates."
 		},
 		{
-			"name": "Team Postmortems",
-			"item": [
-				{
-					"name": "Create Team Postmortem",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"author\": \"85b563c8-18d0-4668-9462-9\",\n  \"incidents\": [\n    {\n      \"incident\": {{incident_unique_id}}\n    }\n  ],\n  \"title\": \"New Infra Postmortem\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/postmortem/",
-							"protocol": "https",
-							"host": [
-								"www",
-								"zenduty",
-								"com"
-							],
-							"path": [
-								"api",
-								"account",
-								"teams",
-								"{{team_id}}",
-								"postmortem",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "List Team Postmortem",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/postmortem/",
-							"protocol": "https",
-							"host": [
-								"www",
-								"zenduty",
-								"com"
-							],
-							"path": [
-								"api",
-								"account",
-								"teams",
-								"{{team_id}}",
-								"postmortem",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Retrieve Team Postmortem",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/postmortem/{{postmortem_id}}/",
-							"protocol": "https",
-							"host": [
-								"www",
-								"zenduty",
-								"com"
-							],
-							"path": [
-								"api",
-								"account",
-								"teams",
-								"{{team_id}}",
-								"postmortem",
-								"{{postmortem_id}}",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Team Postmortem",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"author\": \"85b563c8-18d0-4668-9462-9\",\n  \"incidents\": [\n    {\n      \"incident\": {{incident_unique_id}}\n    }\n  ],\n  \"title\": \"Modified Infra Postmortem\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/postmortem/{{postmortem_id}}/",
-							"protocol": "https",
-							"host": [
-								"www",
-								"zenduty",
-								"com"
-							],
-							"path": [
-								"api",
-								"account",
-								"teams",
-								"{{team_id}}",
-								"postmortem",
-								"{{postmortem_id}}",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Team Postmortem",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/postmortem/{{postmortem_id}}/",
-							"protocol": "https",
-							"host": [
-								"www",
-								"zenduty",
-								"com"
-							],
-							"path": [
-								"api",
-								"account",
-								"teams",
-								"{{team_id}}",
-								"postmortem",
-								"{{postmortem_id}}",
-								""
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "This API endpoint will handle all the operations related to Team Postmortem.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "On Call",
-			"item": [
-				{
-					"name": "List details of who is On Call",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/oncall",
-							"protocol": "https",
-							"host": [
-								"www",
-								"zenduty",
-								"com"
-							],
-							"path": [
-								"api",
-								"account",
-								"teams",
-								"{{team_id}}",
-								"oncall"
-							]
-						},
-						"description": "This request willshow you the on call detais"
-					},
-					"response": []
-				}
-			],
-			"description": "This endpoint will get you the details of who is On Call."
-		},
-		{
 			"name": "Priorities",
 			"item": [
 				{
@@ -3360,7 +3423,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"New SLA\"\n}",
+							"raw": "{\n  \"name\": {{sla_name}}, // example: \"New Infra SLA\",\n  \"escalations\": []\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3368,7 +3431,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/sla/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/sla/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3379,11 +3442,12 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"sla",
 								""
 							]
-						}
+						},
+						"description": "Create the SLA object by setting the values of all the required parameters passed in the request body."
 					},
 					"response": []
 				},
@@ -3393,7 +3457,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/sla/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/sla/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3404,11 +3468,12 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"sla",
 								""
 							]
-						}
+						},
+						"description": "Returns a list of SLA objects."
 					},
 					"response": []
 				},
@@ -3418,7 +3483,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/sla/{{sla_id}}/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/sla/{{sla_unique_id}}/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3429,12 +3494,13 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"sla",
-								"{{sla_id}}",
+								"{{sla_unique_id}}",
 								""
 							]
-						}
+						},
+						"description": "Retrieve the specified SLA object."
 					},
 					"response": []
 				},
@@ -3445,7 +3511,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Modified SLA\",\n    \"description\": \"Modified Description\"\n}",
+							"raw": "{\n  \"name\": {{sla_name}}, // example: \"Modified Infra SLA\",\n  \"escalations\": []\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3453,7 +3519,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/sla/{{sla_id}}/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/sla/{{sla_unique_id}}/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3464,12 +3530,13 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"sla",
-								"{{sla_id}}",
+								"{{sla_unique_id}}",
 								""
 							]
-						}
+						},
+						"description": "Updates the specified SLA object by setting the values of the parameters passed in the request body. Any parameters not provided will be left unchanged."
 					},
 					"response": []
 				},
@@ -3479,7 +3546,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/sla/{{sla_id}}/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/sla/{{sla_unique_id}}/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3490,20 +3557,21 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"sla",
-								"{{sla_id}}",
+								"{{sla_unique_id}}",
 								""
 							]
-						}
+						},
+						"description": "Delete the specified SLA object permanently."
 					},
 					"response": []
 				}
 			],
-			"description": "This endpoint will handle all the operations related to team SLA policy."
+			"description": "This object represents the sla of the incident. You can checkout the sla docs here [https://docs.zenduty.com/docs/incidentsla](https://docs.zenduty.com/docs/incidentsla)"
 		},
 		{
-			"name": "Team Maintenance Modes",
+			"name": "Team Maintenance Mode",
 			"item": [
 				{
 					"name": "Create Team Maintenance Mode",
@@ -3512,7 +3580,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"New Infra Team Maintenance\",\n  \"services\": [],\n  \"start_time\": \"2022-07-08T18:06:00Z\",\n  \"end_time\": \"2022-07-15T18:06:00Z\"\n}",
+							"raw": "{\n  \"name\": {{team_maintenance_name}}, // example: \"New Infra Team Maintenance\",\n  \"services\": [\n      {\n          \"service\": {{service_unique_id}} // example: 191f5e2c-515e-4ee0-b501-3a292f8dae2f\n      }\n  ],\n  \"start_time\": {{team_maintenance_start_time}}, // example: \"2022-07-08T18:06:00Z\",\n  \"end_time\": {{team_maintenance_end_time}} // example: \"2022-07-15T18:06:00Z\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3520,7 +3588,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/maintenance/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/maintenance/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3531,11 +3599,12 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"maintenance",
 								""
 							]
-						}
+						},
+						"description": "Create the Team Maintenance Mode object by setting the values of all the required parameters passed in the request body."
 					},
 					"response": []
 				},
@@ -3545,7 +3614,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/maintenance/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/maintenance/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3556,11 +3625,12 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"maintenance",
 								""
 							]
-						}
+						},
+						"description": "Returns a list of Team Maintenance Mode objects. The Team Maintenance Mode objects are sorted by creation_date, with the most recent Team Maintenance Mode object appearing last."
 					},
 					"response": []
 				},
@@ -3570,7 +3640,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/maintenance/{{maintenance_id}}/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/maintenance/{{team_maintenance_unique_id}}/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3581,12 +3651,13 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"maintenance",
-								"{{maintenance_id}}",
+								"{{team_maintenance_unique_id}}",
 								""
 							]
-						}
+						},
+						"description": "Retrieve the specified Team Maintenance Mode object."
 					},
 					"response": []
 				},
@@ -3597,7 +3668,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"start_time\": \"2020-02-18T16:27:00Z\",\n    \"end_time\": \"2020-02-21T16:27:00Z\",\n    \"services\": [],\n    \"time_zone\": \"UTC\",\n    \"repeat_interval\": 0,\n    \"name\": \"Updated Maintenance Mode\"\n}",
+							"raw": "{\n  \"name\": {{team_maintenance_name}}, // example: \"Modified Infra Team Maintenance\",\n  \"services\": [\n      {\n          \"service\": {{service_unique_id}} // example: 191f5e2c-515e-4ee0-b501-3a292f8dae2f\n      }\n  ],\n  \"start_time\": {{team_maintenance_start_time}}, // example: \"2022-07-08T18:06:00Z\",\n  \"end_time\": {{team_maintenance_end_time}} // example: \"2022-07-15T18:06:00Z\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3605,7 +3676,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/maintenance/{{maintenance_id}}/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/maintenance/{{team_maintenance_unique_id}}/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3616,12 +3687,13 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"maintenance",
-								"{{maintenance_id}}",
+								"{{team_maintenance_unique_id}}",
 								""
 							]
-						}
+						},
+						"description": "Updates the specified Team Maintenance Mode object by setting the values of the parameters passed in the request body. Any parameters not provided will be left unchanged."
 					},
 					"response": []
 				},
@@ -3631,7 +3703,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/maintenance/{{maintenance_id}}/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/maintenance/{{team_maintenance_unique_id}}/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3642,64 +3714,30 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
+								"{{team_unique_id}}",
 								"maintenance",
-								"{{maintenance_id}}",
+								"{{team_maintenance_unique_id}}",
 								""
 							]
-						}
+						},
+						"description": "Delete the specified Team Maintenance Mode object permanently."
 					},
 					"response": []
 				}
 			],
-			"description": "This API endpoint will handle all the operations related to Team Maintenance Mode.",
-			"auth": {
-				"type": "apikey",
-				"apikey": [
-					{
-						"key": "value",
-						"value": "Token (your API key here)",
-						"type": "string"
-					},
-					{
-						"key": "key",
-						"value": "Authorization",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
+			"description": "This object represents the maintenance mode of the team. You can checkout the team maintenance mode docs here [https://docs.zenduty.com/docs/maintenancewindows](https://docs.zenduty.com/docs/maintenancewindows)"
 		},
 		{
-			"name": "Service Maintenance Modes",
+			"name": "Team Postmortems",
 			"item": [
 				{
-					"name": "Create Service Maintenance Mode",
+					"name": "Create Team Postmortem",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"New Maintenance\",\n    \"service\": {{service_id}}\n}",
+							"raw": "{\n  \"author\": {{user_username}}, // example: \"85b563c8-18d0-4668-9462-9\",\n  \"incidents\": [\n    {\n      \"incident\": {{incident_unique_id}} // example: \"U2gGkyJnLQLkX2zQnvkpLW\"\n    }\n  ],\n  \"title\": {{team_postmortem_title}} // example: \"New Infra Postmortem\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3707,7 +3745,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/maintenance/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/postmortem/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3718,23 +3756,22 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
-								"services",
-								"{{service_id}}",
-								"maintenance",
+								"{{team_unique_id}}",
+								"postmortem",
 								""
 							]
-						}
+						},
+						"description": "Create the Team Postmortem object by setting the values of all the required parameters passed in the request body."
 					},
 					"response": []
 				},
 				{
-					"name": "List Service Maintenance Modes",
+					"name": "List Team Postmortem",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/maintenance/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/postmortem/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3745,23 +3782,22 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
-								"services",
-								"{{service_id}}",
-								"maintenance",
+								"{{team_unique_id}}",
+								"postmortem",
 								""
 							]
-						}
+						},
+						"description": "Returns a list of Team Postmortem objects."
 					},
 					"response": []
 				},
 				{
-					"name": "Retrieve Service Maintenance Mode",
+					"name": "Retrieve Team Postmortem",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/maintenance/{{maintenance_id}}/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/postmortem/{{team_postmortem_unique_id}}/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3772,25 +3808,24 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
-								"services",
-								"{{service_id}}",
-								"maintenance",
-								"{{maintenance_id}}",
+								"{{team_unique_id}}",
+								"postmortem",
+								"{{team_postmortem_unique_id}}",
 								""
 							]
-						}
+						},
+						"description": "Retrieve the specified Postmortem object."
 					},
 					"response": []
 				},
 				{
-					"name": "Update Service Maintenance Mode",
+					"name": "Update Team Postmortem",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Modified Maintenance\"\n}",
+							"raw": "{\n  \"author\": {{user_username}}, // example: \"85b563c8-18d0-4668-9462-9\",\n  \"incidents\": [\n    {\n      \"incident\": {{incident_unique_id}} // example: \"U2gGkyJnLQLkX2zQnvkpLW\"\n    }\n  ],\n  \"title\": {{team_postmortem_title}} // example: \"New updated Infra Postmortem\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3798,7 +3833,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/maintenance/{{maintenance_id}}/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/postmortem/{{team_postmortem_unique_id}}/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3809,24 +3844,23 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
-								"services",
-								"{{service_id}}",
-								"maintenance",
-								"{{maintenance_id}}",
+								"{{team_unique_id}}",
+								"postmortem",
+								"{{team_postmortem_unique_id}}",
 								""
 							]
-						}
+						},
+						"description": "Updates the specified Team Postmortem object by setting the values of the parameters passed in the request body. Any parameters not provided will be left unchanged."
 					},
 					"response": []
 				},
 				{
-					"name": "Delete Service Maintenance Mode",
+					"name": "Delete Team Postmortem",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://www.zenduty.com/api/account/teams/{{team_id}}/services/{{service_id}}/maintenance/{{maintenance_id}}/",
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/postmortem/{{team_postmortem_unique_id}}/",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -3837,19 +3871,410 @@
 								"api",
 								"account",
 								"teams",
-								"{{team_id}}",
-								"services",
-								"{{service_id}}",
-								"maintenance",
-								"{{maintenance_id}}",
+								"{{team_unique_id}}",
+								"postmortem",
+								"{{team_postmortem_unique_id}}",
 								""
 							]
-						}
+						},
+						"description": "Delete the specified Postmortem object permanently."
 					},
 					"response": []
 				}
 			],
-			"description": "This API endpoint will handle all the operations related to service maintenance mode."
+			"description": "This object represents the postmortem of the incident. You can checkout the postmortem docs here [https://docs.zenduty.com/docs/incidentpostmortem](https://docs.zenduty.com/docs/incidentpostmortem)"
+		},
+		{
+			"name": "On Call",
+			"item": [
+				{
+					"name": "List details of who is On Call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/account/teams/{{team_unique_id}}/oncall",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"account",
+								"teams",
+								"{{team_unique_id}}",
+								"oncall"
+							]
+						},
+						"description": "This request will show you the on call detais"
+					},
+					"response": []
+				}
+			],
+			"description": "This object represents the user who is oncall."
+		},
+		{
+			"name": "Global Router",
+			"item": [
+				{
+					"name": "Create the Global Router object",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": {{global_router_name}}, // example: \"Infra Global Router\",\n  \"description\": {{global_router_description}} // example: \"This is Infra Global Router for this account\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								""
+							]
+						},
+						"description": "Create the Global Router object by setting the values of all the required parameters passed in the request body."
+					},
+					"response": []
+				},
+				{
+					"name": "List all Global Router objects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								""
+							]
+						},
+						"description": "Returns a list of Global Router objects."
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve the Global Router object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/{{router_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								"{{router_unique_id}}",
+								""
+							]
+						},
+						"description": "Retrieve the specified Global Router object."
+					},
+					"response": []
+				},
+				{
+					"name": "Update the Global Router data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": {{global_router_name}}, // example: \"Infra Global Router Updated\",\n  \"description\": {{global_router_description}} // example: \"This is Infra Global Router Updated for this account\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/{{router_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								"{{router_unique_id}}",
+								""
+							]
+						},
+						"description": "Updates the specified Global Router object by setting the values of the parameters passed in the request body. Any parameters not provided will be left unchanged."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Global Router data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/{{router_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								"{{router_unique_id}}",
+								""
+							]
+						},
+						"description": "Delete the specified Global Router object permanently."
+					},
+					"response": []
+				}
+			],
+			"description": "This object represents the Global Router of the Account. You can checkout the global alert routing docs here [https://docs.zenduty.com/docs/globalalertrouting](https://docs.zenduty.com/docs/globalalertrouting)"
+		},
+		{
+			"name": "Global Router Rules",
+			"item": [
+				{
+					"name": "Create the Global Router Rule object",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": {{global_router_rule_name}}, // example: \"Rule for Grafana Integration\"\n  \"actions\": [\n    {\n      \"action_type\": 0,\n      \"integration\": {{integration_unique_id}} // example: \"0c4e939d-6d54-401e-ad83-6114368bdd0b\"\n    }\n  ],\n  \"rule_json\": \"{\\\"type\\\":\\\"group\\\",\\\"id\\\":\\\"9a99988a-0123-4456-b89a-b1607f326fd8\\\",\\\"children1\\\":{\\\"898aa9ba-0123-4456-b89a-b16a429f5d94\\\":{\\\"type\\\":\\\"rule\\\",\\\"id\\\":\\\"898aa9ba-0123-4456-b89a-b16a429f5d94\\\",\\\"properties\\\":{\\\"field\\\":\\\"alert.payload\\\",\\\"operator\\\":\\\"payloadsearch\\\",\\\"value\\\":[\\\"$.commonLabels.alertname\\\",\\\"grafana\\\"],\\\"valueSrc\\\":[\\\"value\\\",\\\"value\\\"],\\\"operatorOptions\\\":{\\\"ploperator\\\":\\\"equal\\\"},\\\"valueType\\\":[\\\"text\\\",\\\"text\\\"]},\\\"path\\\":[\\\"9a99988a-0123-4456-b89a-b1607f326fd8\\\",\\\"898aa9ba-0123-4456-b89a-b16a429f5d94\\\"]}},\\\"properties\\\":{\\\"conjunction\\\":\\\"AND\\\",\\\"not\\\":false},\\\"path\\\":[\\\"9a99988a-0123-4456-b89a-b1607f326fd8\\\"]}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/{{router_unique_id}}/rulesets/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								"{{router_unique_id}}",
+								"rulesets",
+								""
+							]
+						},
+						"description": "Create the Global Router Rule object by setting the values of all the required parameters passed in the request body."
+					},
+					"response": []
+				},
+				{
+					"name": "List all Global Router Rule objects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/{{router_unique_id}}/rulesets/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								"{{router_unique_id}}",
+								"rulesets",
+								""
+							]
+						},
+						"description": "Returns a list of Global Router Rule objects."
+					},
+					"response": []
+				},
+				{
+					"name": "Update the Global Router Rule object",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rule\": {{global_router_rule_unique_id}}, // example: \"12edd6c5-2217-4b53-b635-83083f420dd8\",\n  \"position\": {{global_router_rule_position}} // example: 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/{{router_unique_id}}/rulesets/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								"{{router_unique_id}}",
+								"rulesets",
+								""
+							]
+						},
+						"description": "Updates the position of the Global Router Rule object by setting the position and rule unique id passed in the request body"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve the Global Router Rule object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/{{router_unique_id}}/rulesets/{{ruleset_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								"{{router_unique_id}}",
+								"rulesets",
+								"{{ruleset_unique_id}}",
+								""
+							]
+						},
+						"description": "Retrieve the specified Global Router Rule object."
+					},
+					"response": []
+				},
+				{
+					"name": "Update the Global Router Rule data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": {{global_router_rule_updated_name}}, // example: \"Rule for Grafana Integration Updated\"\n  \"rule_json\": \"{\\\"type\\\":\\\"group\\\",\\\"id\\\":\\\"9a99988a-0123-4456-b89a-b1607f326fd8\\\",\\\"children1\\\":{\\\"898aa9ba-0123-4456-b89a-b16a429f5d94\\\":{\\\"type\\\":\\\"rule\\\",\\\"id\\\":\\\"898aa9ba-0123-4456-b89a-b16a429f5d94\\\",\\\"properties\\\":{\\\"field\\\":\\\"alert.payload\\\",\\\"operator\\\":\\\"payloadsearch\\\",\\\"value\\\":[\\\"$.commonLabels.alertname\\\",\\\"grafana\\\"],\\\"valueSrc\\\":[\\\"value\\\",\\\"value\\\"],\\\"operatorOptions\\\":{\\\"ploperator\\\":\\\"equal\\\"},\\\"valueType\\\":[\\\"text\\\",\\\"text\\\"]},\\\"path\\\":[\\\"9a99988a-0123-4456-b89a-b1607f326fd8\\\",\\\"898aa9ba-0123-4456-b89a-b16a429f5d94\\\"]}},\\\"properties\\\":{\\\"conjunction\\\":\\\"AND\\\",\\\"not\\\":false},\\\"path\\\":[\\\"9a99988a-0123-4456-b89a-b1607f326fd8\\\"]}\",\n  \"actions\": [\n    {\n      \"action_type\": 0,\n      \"integration\": {{integration_unique_id}} // example: \"0c4e939d-6d54-401e-ad83-6114368bdd0b\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/{{router_unique_id}}/rulesets/{{ruleset_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								"{{router_unique_id}}",
+								"rulesets",
+								"{{ruleset_unique_id}}",
+								""
+							]
+						},
+						"description": "Updates the specified Global Router Rule object by setting the values of the parameters passed in the request body. Any parameters not provided will be left unchanged."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Global Router Rule data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://www.zenduty.com/api/v2/account/events/router/{{router_unique_id}}/rulesets/{{ruleset_unique_id}}/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"zenduty",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"account",
+								"events",
+								"router",
+								"{{router_unique_id}}",
+								"rulesets",
+								"{{ruleset_unique_id}}",
+								""
+							]
+						},
+						"description": "Delete the specified Global Router Rule object permanently."
+					},
+					"response": []
+				}
+			],
+			"description": "The Rules of the Global Router in an Account are represented by this object. Visit this link to view the documentation for the global alert routing rules [https://docs.zenduty.com/docs/globalalertrouting](https://docs.zenduty.com/docs/globalalertrouting)"
 		}
 	],
 	"auth": {
@@ -3857,7 +4282,7 @@
 		"apikey": [
 			{
 				"key": "value",
-				"value": "Token (Your API key here)",
+				"value": "Token {{api_key}}",
 				"type": "string"
 			},
 			{
@@ -3871,32 +4296,5 @@
 				"type": "string"
 			}
 		]
-	},
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "team_id",
-			"value": "none",
-			"type": "string"
-		}
-	]
+	}
 }
